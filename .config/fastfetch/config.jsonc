@@ -1,0 +1,69 @@
+//    ___           _     __       _        _
+//   | __|__ _  ___| |_  / _| ___ | |_  __ | |_
+//   | _|/ _` |(_-<|  _||  _|/ -_)|  _|/ _|| ' \
+//   |_| \__,_|/__/ \__||_|  \___| \__|\__||_||_|
+//
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "small",
+    "color": {
+      "1": "blue",
+      "2": "blue"
+    },
+    "padding": {
+      "top": 1
+    }
+  },
+  "display": {
+    "color": "blue",
+    "separator": " "
+  },
+  "modules": [
+    {
+      "key": "╭───────────╮",
+      "type": "custom"
+    },
+    {
+      "key": "│ {#39}󰀄 user    {#keys}│",
+      "type": "title",
+      "format": "{user-name}"
+    },
+    {
+      "key": "│ {#39}󰇅 hname   {#keys}│",
+      "type": "title",
+      "format": "{host-name}"
+    },
+    {
+      "key": "├───────────┤",
+      "type": "custom"
+    },
+    {
+      "key": "│ {#39}󰍛 cpu     {#keys}│",
+      "type": "cpu",
+      "showPeCoreCount": true
+    },
+    {
+      "key": "│ {#39}󰉉 disk    {#keys}│",
+      "type": "disk",
+      "folders": "/"
+    },
+    {
+      "key": "│ {#39} memory  {#keys}│",
+      "type": "memory"
+    },
+    {
+      "key": "├───────────┤",
+      "type": "custom"
+    },
+    {
+      "key": "│ {#39} colors  {#keys}│",
+      "type": "colors",
+      "symbol": "circle"
+    },
+    {
+      "key": "╰───────────╯",
+      "type": "custom"
+    }
+  ]
+}
