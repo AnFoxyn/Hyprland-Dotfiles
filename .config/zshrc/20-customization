@@ -1,0 +1,26 @@
+# ======================================================
+# КАСТОМИЗАЦИЯ
+# ======================================================
+# Установка темы OhMyZsh
+ZSH_THEME="dpoggi"
+# Подключение плагинов OhMyZsh
+plugins=(
+    z
+    git
+    npm
+    sudo
+    history
+    archlinux
+    web-search
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
+# Подключение самого OhMyZsh
+source $ZSH/oh-my-zsh.sh
+# Конфигурации хранения истории команд в Zsh
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+# Конфигурация командной строки с помощью OhMyPosh
+eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/theme.toml)"

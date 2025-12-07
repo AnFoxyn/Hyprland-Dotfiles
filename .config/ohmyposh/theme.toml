@@ -1,0 +1,185 @@
+#      ____  __   __  ___     ___           __ 
+#     / __ \/ /  /  |/  /_ __/ _ \___  ___ / / 
+#    / /_/ / _ \/ /|_/ / // / ___/ _ \(_-</ _ \
+#    \____/_//_/_/  /_/\_, /_/   \___/___/_//_/
+#                     /___/                    
+
+version = 3
+final_space = true
+console_title_template = '{{ .Shell }} in {{ .Folder }}'
+
+[palette]
+black = 'black'
+red = 'red'
+green = 'green'
+yellow = 'yellow'
+blue = 'blue'
+magenta = 'magenta'
+cyan = 'cyan'
+white = 'white'
+
+[transient_prompt]
+newline = true
+template = "❯❯ "
+background = 'transparent'
+foreground = 'p:blue'
+
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+
+[[blocks.segments]]
+type = 'text'
+style = 'plain'
+template = "\n╭─"
+foreground = 'p:black'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+type = 'session'
+style = 'diamond'
+leading_diamond = ''
+template = '{{ if .SSHSession }}󰢹  {{ end }}{{ .UserName }}'
+background = 'p:black'
+foreground = 'p:blue'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+type = 'root'
+style = 'powerline'
+powerline_symbol = ''
+template = '󱐋'
+foreground = 'p:red'
+background = 'p:black'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+type = 'os'
+style = 'powerline'
+powerline_symbol = ''
+template = '{{ .Icon }}  '
+background = 'p:black'
+foreground = 'p:blue'
+
+[blocks.segments.properties]
+cache_duration = 'none'
+
+[[blocks.segments]]
+type = 'path'
+style = 'diamond'
+trailing_diamond = ''
+template = ' 󰉋 {{ path .Path .Location }}'
+background = 'p:blue'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+style = 'folder'
+cache_duration = 'none'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'right'
+
+[[blocks.segments]]
+type = 'git'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = ' ({{ url .UpstreamIcon .UpstreamURL }} {{ url .HEAD .UpstreamURL }}){{ if gt .Ahead 0 }}<p:green> +{{ .Ahead }}</>{{ end }}{{ if gt .Behind 0 }}<p:red> -{{ .Behind }}</>{{ end }}{{ if .Working.Changed }}<p:white>  {{ .Working.String }}</>{{ end }}{{ if .Staging.Changed }}<p:white>  {{ .Staging.String }}</>{{ end }}'
+background = 'p:yellow'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+branch_icon = ''
+cache_duration = 'none'
+display_changing_color = true
+fetch_status = true
+fetch_upstream_icon = true
+full_branch_path = true
+
+[[blocks.segments]]
+type = 'node'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = ' {{ .Full }}'
+background = 'p:green'
+foreground = 'p:black'
+
+[[blocks.segments]]
+type = 'npm'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = '󰛷 {{ .Full }}'
+background = 'p:red'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+display_mode = 'files'
+extensions = ['package-lock.json']
+
+[[blocks.segments]]
+type = 'pnpm'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = '󰋁 {{ .Full }}'
+background = 'p:yellow'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+display_mode = 'files'
+extensions = ['pnpm-lock.yaml']
+
+[[blocks.segments]]
+type = 'python'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = ' {{ .Full }}'
+background = 'p:green'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+display_mode = 'files'
+
+[[blocks.segments]]
+type = 'java'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = ' {{ .Full }}'
+background = 'p:magenta'
+foreground = 'p:black'
+
+[[blocks.segments]]
+type = 'php'
+style = 'diamond'
+leading_diamond = ''
+trailing_diamond = ''
+template = ' {{ .Full }}'
+background = 'p:blue'
+foreground = 'p:white'
+
+[[blocks]]
+type = 'prompt'
+alignment = 'left'
+newline = true
+
+[[blocks.segments]]
+type = 'text'
+style = 'diamond'
+template = '╰─ ❯❯'
+foreground = 'p:black'
+
+[blocks.segments.properties]
+always_enabled = true
+cache_duration = 'none'
