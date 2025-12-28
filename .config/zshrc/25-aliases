@@ -15,5 +15,5 @@ alias lt='eza -a --tree --level=1 --icons=always'
 # Замена vim на свой редактор
 alias v='$EDITOR'
 alias vim='$EDITOR'
-# Для работы kitty с ssh
+# Для работы kitty с ssh (не лучшее решение)
 alias kitty-ssh='kitty +kitten ssh'
